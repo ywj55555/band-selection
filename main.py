@@ -156,7 +156,9 @@ if __name__ == '__main__':
     select_bands_list = {
         # 'handSelected': sorted([25, 52, 76, 94, 99, 103, 105, 109]),
         '本文人工选取': sorted([1, 13, 25, 52, 76, 92, 99, 105, 109]),  # 就要这组了！ 最小间距4个，综合分数看起来应该不低
-        '本文嵌入式选取': sorted([120, 89, 56, 95, 126, 76, 75, 99, 3]),  # 有超过125 最小间距1个
+        # '本文嵌入式选取': sorted([120, 89, 56, 95, 126, 76, 75, 99, 3, 24, 31, 69, 71, 97, 100, 107, 124, 127]),  # 有超过125 最小间距1个
+        '本文嵌入式选取': [120, 89, 56, 95, 126, 76, 75, 99, 3, 24, 31, 69, 71, 97, 100, 107, 124, 127],
+        # 有超过125 最小间距1个
         'BS-Nets': sorted([73, 14, 93, 85, 40, 70, 91, 59, 88]),  # 波长间距 最小间距2个
         'SFS': sorted([0, 86, 83, 58, 23, 77, 66, 91, 39]),  # 波长间距 最小间距3个
         'equalIntervalSelected': sorted([14, 28, 42, 56, 70, 84, 98, 112, 126]),
@@ -164,14 +166,14 @@ if __name__ == '__main__':
         'EAS': sorted([88, 75, 54, 30, 28, 12, 2, 23, 36])  # 最小间距2个
     }
     log = './log/'
-    selected_save_path = log + 'kindsOfMethodSelected.csv'
+    selected_save_path = log + 'kindsOfMethodSelected2.csv'
     selected_f = open(selected_save_path, 'w', newline='')
     selected_f_csv = csv.writer(selected_f)
     selected_f_csv.writerow(['方法', '所选特征波段（经过四舍五入）/ nm'])
     for k, v in select_bands_list.items():
         value = ''
         for nm in v:
-            value = value + str(round(wavelength[nm])) + ', '
+            value = value + str(round(wavelength[nm])) + '、'
         tmp_cow = [k, value]
         selected_f_csv.writerow(tmp_cow)
     selected_f.close()
