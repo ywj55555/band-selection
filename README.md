@@ -4,7 +4,7 @@
 2、复现了现有模型如下：  
   BSNETs:BStrainShAndWater.py为训练代码，模型在BSNET_Conv.py；  
   精英蚁群优化：Aco_BandSelect.py，一种智能算法  
-  SFS\SBS：search_band_selection_based_JM.py，二者为贪心算法  
+  SFS\SBS：search_band_selection_based_JM.py，二者为贪心算法，需使用 generateMeanCovCoef.py 生成 均值和协方差矩阵    
   使用方法：
   1、python main.py --dataset Indian_pines_corrected --method SRL-SOA --weights False --q 3 --bands 25  
   2、python -u BStrainKSC.py > output_ksc_bsnets.log 2>&1 &    
