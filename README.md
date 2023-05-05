@@ -6,9 +6,9 @@
   精英蚁群优化：Aco_BandSelect.py，一种智能算法  
   SFS\SBS：search_band_selection_based_JM.py，二者为贪心算法  
   使用方法：
-  python main.py --dataset Indian_pines_corrected --method SRL-SOA --weights False --q 3 --bands 25
-   python -u BStrainKSC.py > output_ksc_bsnets.log 2>&1 &
-   interBandRedundancy.py注意修改utilsF.py 中的 get_class_distributionIP的 count_dict 为相应数据集类别数，或者自己新建一个函数
+  1、python main.py --dataset Indian_pines_corrected --method SRL-SOA --weights False --q 3 --bands 25  
+  2、python -u BStrainKSC.py > output_ksc_bsnets.log 2>&1 &    
+  3、interBandRedundancy.py注意修改utilsF.py 中的 get_class_distributionIP的 count_dict 为相应数据集类别数，或者自己新建一个函数  
 3、使用了四个波段选择评价指标：  
   oif、cal_mean_spectral_divergence、get_average_jm_score、get_average_spectral_angle_score，均在bsUtils.py  
   还计算了一个归一化分数，具体见calc_all_index_score.py  
